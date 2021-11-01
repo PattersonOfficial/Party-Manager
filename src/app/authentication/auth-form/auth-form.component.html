@@ -1,3 +1,15 @@
-<p>
-  auth-form works!
-</p>
+<form [formGroup]='authForm'>
+  <ion-item>
+    <ion-label position="stack">Email</ion-label>
+    <ion-input formControlName="email" type="email" placeholder="Please enter your email"></ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="!isPasswordResetPage">
+    <ion-label position="stack">Password</ion-label>
+    <ion-input formControlName="password" type="password" placeholder="Please enter your password"></ion-input>
+  </ion-item>
+
+  <ion-button (click)="submitCredentials(authForm)" expand='block' [disabled]='!authForm.valid'>
+    {{ actionButtonText }}
+  </ion-button>
+</form>
