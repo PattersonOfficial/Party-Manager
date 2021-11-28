@@ -30,7 +30,7 @@ export class AuthenticationPage implements OnInit {
     }
   }
 
-  handleuserCredentials(userCredentials): void {
+  handleUserCredentials(userCredentials): void {
     const { email, password } = userCredentials;
     switch (this.url) {
       case 'login':
