@@ -8,25 +8,12 @@ import { Party } from './party';
   styleUrls: ['./party.page.scss'],
 })
 export class PartyPage implements OnInit {
-
   readonly partyList = this.partyService.getPartyList();
 
-  constructor(private partyService: PartyService, private loadingCtrl: LoadingController) { }
+  constructor(
+    private partyService: PartyService,
+    private loadingCtrl: LoadingController
+  ) {}
 
-  ngOnInit() {
-    this.getPartyList();
-  }
-
-  async getPartyList() {
-    const loading = await this.loadingCtrl.create({
-      message: 'Loading...',
-      mode: 'ios'
-    });
-
-    loading.present();
-    if (this.partyList) {
-      loading.dismiss();
-    }
-  }
-
+  ngOnInit() {}
 }
